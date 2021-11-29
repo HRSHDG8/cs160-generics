@@ -22,7 +22,7 @@ public class DataProvider {
 
     public static Integer[] getTestData(int size) {
         Integer[] arr = new Integer[size];
-        for (int i = 0; i < SIZE; i++) {
+        for (int i = 0; i < size; i++) {
             arr[i] = r.nextInt();
         }
         return arr;
