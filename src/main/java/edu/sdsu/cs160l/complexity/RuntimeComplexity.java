@@ -4,9 +4,6 @@ import java.util.Arrays;
 import java.util.function.Consumer;
 
 public class RuntimeComplexity {
-    public void constantTime(Integer[] a) {
-        System.out.println(a.length);
-    }
 
     public void linearTime(Integer[] a) {
         int n = a.length;
@@ -33,7 +30,6 @@ public class RuntimeComplexity {
     public static void main(String[] args) {
         Integer[] a = DataProvider.getTestData(100);
         RuntimeComplexity runtimeComplexity = new RuntimeComplexity();
-        runWithTimeLog(runtimeComplexity::constantTime, a);
         runWithTimeLog(runtimeComplexity::linearTime, a);
         runWithTimeLog(runtimeComplexity::quadraticTime, a);
     }
