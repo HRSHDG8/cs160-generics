@@ -6,25 +6,11 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Comparator;
 
-import static edu.sdsu.cs160l.algorithm.DataProvider.getTestData;
+import static edu.sdsu.cs160l.complexity.DataProvider.getTestData;
 
 class QuickSortTest {
 
     private final Sorter quickSort = new QuickSort();
-
-    @Test
-    void sortStudents() {
-        Student[] i = new Student[]{
-                new Student(1L, "Z", 1.0),
-                new Student(1L, "H", 1.0),
-                new Student(1L, "M", 1.0)
-        };
-        quickSort.sort(i, Comparator.comparing(Student::getName));
-
-        for (Student a : i) {
-            System.out.print(a);
-        }
-    }
 
     @Test
     void sort() {

@@ -6,24 +6,24 @@ import java.util.Comparator;
 
 public class QuickSort implements Sorter {
     @Override
-    public <T> void sort(T[] collection) {
-        Comparable[] c = (Comparable[]) collection;
+    public void sort(Integer[] c) {
         sort(c, Comparator.naturalOrder());
     }
 
     @Override
-    public <T> void sort(T[] collection, Comparator<? super T> comparisonStrategy) {
+    public void sort(Integer[] collection, Comparator<Integer> comparisonStrategy) {
         quickSort(collection, 0, collection.length - 1, comparisonStrategy);
     }
 
-    private <T> void swap(T[] arr, int i, int j) {
-        T temp = arr[i];
+
+    private void swap(Integer[] arr, int i, int j) {
+        Integer temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    private <T> int partition(T[] arr, int low, int high, Comparator<? super T> comparisonStrategy) {
-        T pivot = arr[high];
+    private int partition(Integer[] arr, int low, int high, Comparator<Integer> comparisonStrategy) {
+        Integer pivot = arr[high];
 
         int i = (low - 1);
 
@@ -37,7 +37,7 @@ public class QuickSort implements Sorter {
         return (i + 1);
     }
 
-    private <T> void quickSort(T[] arr, int low, int high, Comparator<? super T> comparisonStrategy) {
+    private void quickSort(Integer[] arr, int low, int high, Comparator<Integer> comparisonStrategy) {
         if (low < high) {
             int pi = partition(arr, low, high, comparisonStrategy);
             quickSort(arr, low, pi - 1, comparisonStrategy);

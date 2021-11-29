@@ -4,7 +4,7 @@ import java.util.Comparator;
 
 public interface Sorter {
 
-    <T> void sort(T[] collection);
+    void sort(Integer[] collection);
 
-    <T> void sort(T[] collection, Comparator<? super T> comparisonStrategy);
+    void sort(Integer[] collection, Comparator<Integer> comparisonStrategy);
 }

@@ -1,4 +1,4 @@
-package edu.sdsu.cs160l.algorithm;
+package edu.sdsu.cs160l.complexity;
 
 import java.util.Arrays;
 import java.util.Random;
@@ -15,8 +15,17 @@ public class DataProvider {
         }
     }
 
-    static Integer[] getTestData() {
+    // return copy of the array since we are manipulating the original array while sorting
+    public static Integer[] getTestData() {
         return Arrays.copyOf(a, a.length);
+    }
+
+    public static Integer[] getTestData(int size) {
+        Integer[] arr = new Integer[size];
+        for (int i = 0; i < SIZE; i++) {
+            arr[i] = r.nextInt();
+        }
+        return arr;
     }
 
 

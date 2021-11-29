@@ -3,7 +3,7 @@ package edu.sdsu.cs160l.algorithm;
 import edu.sdsu.cs160l.sorter.Sorter;
 import org.junit.jupiter.api.Test;
 
-import static edu.sdsu.cs160l.algorithm.DataProvider.getTestData;
+import static edu.sdsu.cs160l.complexity.DataProvider.getTestData;
 
 public class AlgorithmsTimeComparators {
     private final Sorter bubbleSort = new BubbleSort();
