@@ -7,12 +7,14 @@ import java.util.Comparator;
 public class BubbleSort implements Sorter {
 
     @Override
-    public void sort(Integer[] c) {
-        sort(c, Comparator.naturalOrder());
+    @SuppressWarnings("unchecked")
+    public <T> void sort(T[] c) {
+        Comparable[] comparable = (Comparable[]) c;
+        sort(comparable, Comparator.naturalOrder());
     }
 
     @Override
-    public void sort(Integer[] c, Comparator<Integer> comparisonStrategy) {
+    public <T> void sort(T[] c, Comparator<? super T> comparisonStrategy) {
         for (int i = 0; i < c.length - 1; i++) {
             for (int j = 0; j < c.length - 1; j++) {
                 if (comparisonStrategy.compare(c[j], c[j + 1]) > 0) {
@@ -22,8 +24,8 @@ public class BubbleSort implements Sorter {
         }
     }
 
-    private void swap(Integer[] arr, int i, int j) {
-        Integer temp = arr[i];
+    private <T> void swap(T[] arr, int i, int j) {
+        T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }

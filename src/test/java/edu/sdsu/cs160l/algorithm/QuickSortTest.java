@@ -1,10 +1,7 @@
 package edu.sdsu.cs160l.algorithm;
 
-import edu.sdsu.cs160l.model.Student;
 import edu.sdsu.cs160l.sorter.Sorter;
 import org.junit.jupiter.api.Test;
-
-import java.util.Comparator;
 
 import static edu.sdsu.cs160l.complexity.DataProvider.getTestData;
 
@@ -21,7 +18,7 @@ class QuickSortTest {
         }
         System.out.println("Time to iterate:: " + (System.nanoTime() - time));
         time = System.nanoTime();
-        quickSort.sort(a);
+        quickSort.sort(a, (o1, o2) -> o2 - o1);
         System.out.println("Time to sort bubble:: " + (System.nanoTime() - time));
     }
 

@@ -6,24 +6,25 @@ import java.util.Comparator;
 
 public class QuickSort implements Sorter {
     @Override
-    public void sort(Integer[] c) {
-        sort(c, Comparator.naturalOrder());
+    public <T> void sort(T[] c) {
+        Comparable[] comparable = (Comparable[]) c;
+        sort(comparable, Comparator.naturalOrder());
     }
 
     @Override
-    public void sort(Integer[] collection, Comparator<Integer> comparisonStrategy) {
+    public<T> void sort(T[] collection, Comparator<? super T> comparisonStrategy) {
         quickSort(collection, 0, collection.length - 1, comparisonStrategy);
     }
 
 
-    private void swap(Integer[] arr, int i, int j) {
-        Integer temp = arr[i];
+    private<T> void swap(T[] arr, int i, int j) {
+        T temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    private int partition(Integer[] arr, int low, int high, Comparator<Integer> comparisonStrategy) {
-        Integer pivot = arr[high];
+    private <T> int partition(T[] arr, int low, int high, Comparator<? super T> comparisonStrategy) {
+        T pivot = arr[high];
 
         int i = (low - 1);
 
@@ -37,7 +38,7 @@ public class QuickSort implements Sorter {
         return (i + 1);
     }
 
-    private void quickSort(Integer[] arr, int low, int high, Comparator<Integer> comparisonStrategy) {
+    private <T> void quickSort(T[] arr, int low, int high, Comparator<? super T> comparisonStrategy) {
         if (low < high) {
             int pi = partition(arr, low, high, comparisonStrategy);
             quickSort(arr, low, pi - 1, comparisonStrategy);
