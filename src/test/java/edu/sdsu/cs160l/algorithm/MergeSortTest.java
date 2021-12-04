@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import static edu.sdsu.cs160l.complexity.DataProvider.getTestData;
 
 public class MergeSortTest {
-    private final Sorter mergeSort = null;//TODO replace this with your MergeSort class
+    private final Sorter mergeSort = null;
 
     @Test
     void sort() {
