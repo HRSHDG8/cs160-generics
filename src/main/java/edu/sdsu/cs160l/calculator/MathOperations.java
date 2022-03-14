@@ -10,9 +10,11 @@ public class MathOperations {
     private Calculator<Double> calculator;
 
     public MathOperations() {
+        // TODO change this to use DoubleCalculator
         this.calculator = new SimpleCalculator();
     }
 
+    // Do not change this to double, let it be int only
     public int factorial(int n){
         int factorial = 1;
         for(int i=2;i<=n;i++){

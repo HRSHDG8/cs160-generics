@@ -43,7 +43,7 @@ class MathOperationsTest {
 
     @Test
     public void testFToC() {
-        assertEquals(0, mathOperations.fahrenheitToCelsius(32));
+        assertEquals(0.0, mathOperations.fahrenheitToCelsius(32.0));
     }
 
 
