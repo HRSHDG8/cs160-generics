@@ -1,6 +1,6 @@
 package edu.sdsu.cs160l.model;
 
-public class Student {
+public class  Student {
     private Long redId;
     private String name;
     private Double gpa;
